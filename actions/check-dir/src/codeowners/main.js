@@ -1,9 +1,8 @@
-import path from 'path';
-// import fs from 'fs';
-import * as core from '@actions/core';
-import extractCodeOwners from './extract-codeowners';
-import extractFileMatches from './extract-filematches';
-import { getVersionControlledFiles } from './utils';
+const path = require('path');
+const core = require('@actions/core');
+const extractCodeOwners = require('./extract-codeowners');
+const extractFileMatches = require('./extract-filematches');
+const { getVersionControlledFiles } = require('./utils');
 
 // const filepath = './codeowner-information.json';
 

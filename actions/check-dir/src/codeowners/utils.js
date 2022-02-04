@@ -1,5 +1,5 @@
-import { exec } from 'child_process';
-import fs from 'fs';
+const { exec } = require('child_process');
+const fs = require('fs');
 
 const listVersionControlledFilesCommand = 'git ls-tree HEAD -r --name-only';
 

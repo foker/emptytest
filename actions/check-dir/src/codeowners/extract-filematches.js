@@ -1,4 +1,4 @@
-import ignore from 'ignore';
+const ignore = require('ignore');
 
 function extractFileMatches(files, ownersInfo) {
     return files.reduce((acc, cur) => {

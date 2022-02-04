@@ -1,11 +1,11 @@
-import {
+const {
     setFailed, setOutput, debug, warning,
-} from '@actions/core';
-import { Octokit } from '@octokit/rest';
-import throttlingPlugin from '@octokit/plugin-throttling';
-import { env } from 'process';
-import { GitHubDiff, sets } from 'src/diff-set/diff';
-import { parseConfig, intoParams } from 'src/diff-set/util';
+} = require('@actions/core');
+const { Octokit } = require('@octokit/rest');
+const throttlingPlugin = require('@octokit/plugin-throttling');
+const { env } = require('process');
+const { GitHubDiff, sets } = require('./diff');
+const { parseConfig, intoParams } = require('./util');
 
 export default async function() {
     try {

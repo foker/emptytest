@@ -1,4 +1,4 @@
-import { getFileContents } from 'src/codeowners/utils';
+const { getFileContents } = require('./utils');
 
 const codeownersRe = new RegExp('^[^#](.*)$', 'mg');
 

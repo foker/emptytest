@@ -1,4 +1,4 @@
-import { Minimatch } from 'minimatch';
+const { Minimatch } = require('minimatch');
 
 export const sets = (filters, files) => Array.from(Object.entries(filters)).reduce(
     (filtered, [key, patterns]) => patterns.split(/\r?\n/).reduce((filtered, pattern) => {
