@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: action-check-dir-permission
-        uses: foker/action-check-dir-permission@v1.5
+        uses: foker/action-check-dir-permission@v1.6
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
