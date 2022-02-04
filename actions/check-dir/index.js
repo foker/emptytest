@@ -20,7 +20,6 @@ async function run() {
         failIfMissing(payloadContext.pull_request, "Can't find pull request");
         const issue_number = payloadContext.pull_request.number;
         core.debug("issue_number: " + issue_number);
-
         const GITHUB_TOKEN = core.getInput("GITHUB_TOKEN");
 
         failIfMissing(GITHUB_TOKEN, "Can't find GITHUB_TOKEN");
