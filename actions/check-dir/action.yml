@@ -4,6 +4,9 @@ inputs:
   GITHUB_TOKEN:
     description: 'Github token'
     required: true
+  comment:
+    description: 'just a comment'
+    required: false
 #  who-to-greet:  # id of input
 #    description: 'Who to greet'
 #    required: true
