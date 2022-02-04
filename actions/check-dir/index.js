@@ -1,8 +1,8 @@
 const core = require("@actions/core");
 const github = require("@actions/github");
 
-import getCodeOwners from './src/codeowners/main';
-import getDiffSet from './src/diff-set/main';
+const getCodeOwners = require('./src/codeowners/main');
+const getDiffSet = require('./src/diff-set/main');
 
 async function run() {
     try {
