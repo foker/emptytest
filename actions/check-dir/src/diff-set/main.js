@@ -7,7 +7,7 @@ import { env } from 'process';
 import { GitHubDiff, sets } from 'src/diff-set/diff';
 import { parseConfig, intoParams } from 'src/diff-set/util';
 
-async function run() {
+export default async function() {
     try {
         const config = parseConfig(env);
         Octokit.plugin(throttlingPlugin);
@@ -34,11 +34,7 @@ async function run() {
         );
         const diffset = await differ.diff(intoParams(config));
         setOutput('files', diffset.join(' '));
-        const filterSets = sets(config.fileFilters, diffset);
-        Array.from(Object.entries(filterSets)).forEach(([key, matches]) => {
-            debug(`files for ${key} ${matches}`);
-            setOutput(key, matches.join(' '));
-        });
+        return sets(config.fileFilters, diffset);
     } catch (error) {
         console.log(error);
         setFailed(error.message);

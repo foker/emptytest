@@ -1,9 +1,9 @@
 import path from 'path';
 // import fs from 'fs';
 import * as core from '@actions/core';
-import extractCodeOwners from 'src/codeowners/extract-codeowners';
-import extractFileMatches from 'src/codeowners/extract-filematches';
-import { getVersionControlledFiles } from 'src/codeowners/utils';
+import extractCodeOwners from './extract-codeowners';
+import extractFileMatches from './extract-filematches';
+import { getVersionControlledFiles } from './utils';
 
 // const filepath = './codeowner-information.json';
 
@@ -38,4 +38,4 @@ async function extractCodeOwnerInfo(codeownerPath, fileMatchInfo) {
 const codeownerPath = core.getInput('path') || './CODEOWNERS';
 const fileMatchInfo = core.getInput('file_match_info').toLowerCase() === 'true';
 
-extractCodeOwnerInfo(codeownerPath, fileMatchInfo);
+export default () => extractCodeOwnerInfo(codeownerPath, fileMatchInfo);

@@ -1,8 +1,15 @@
 const core = require("@actions/core");
 const github = require("@actions/github");
 
+import getCodeOwners from './src/codeowners/main';
+import getDiffSet from './src/diff-set/main';
+
 async function run() {
     try {
+        const codeOwners = await getCodeOwners();
+        const diffset = await getDiffSet();
+        core.setOutput('codeOwners', JSON.stringify(codeOwners));
+        core.setOutput('diffset', JSON.stringify(diffset));
         const payloadContext = github.context.payload;
 
         failIfMissing(payloadContext, "Can't find payload context");
