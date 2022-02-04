@@ -25,6 +25,7 @@ async function run() {
         core.debug("repo: " + repo);
 
         failIfMissing(payloadContext.pull_request, "Can't find pull request");
+
         const issue_number = payloadContext.pull_request.number;
         core.debug("issue_number: " + issue_number);
 
