@@ -16,12 +16,12 @@ const run = async () => {
 
         if (!res.length) {
             return false;
+        } else {
+            throw new Error(`user ${user} doesn't have enough permissions to edit next files: ${res.join(', ')}`)
         }
-
-        core.error(`user ${user} doesn't have enough permissions to edit next files: ${res.join(', ')}`)
     } catch (error) {
         core.setFailed(error.message);
     }
 }
 
-await run();
+run();
