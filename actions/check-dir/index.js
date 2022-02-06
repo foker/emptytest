@@ -11,8 +11,8 @@ async function run() {
         core.info('info')
         core.notice('notice')
         core.warning('warning')
-        core.setOutput('codeOwners', JSON.stringify(codeOwners));
-        core.setOutput('diffset', JSON.stringify(diffset));
+        console.log('codeOwners', JSON.stringify(codeOwners));
+        console.log('diffset', JSON.stringify(diffset));
         console.log('kek');
         const payloadContext = github.context.payload;
 
