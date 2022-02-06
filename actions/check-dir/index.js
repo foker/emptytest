@@ -17,6 +17,7 @@ async function run() {
         failIfMissing(payloadContext.repository.owner, "Can't find owner");
         failIfMissing(payloadContext.repository.owner.login, "Can't find owner");
 
+
         const owner = payloadContext.repository.owner.login;
         core.debug("owner: " + owner);
 
