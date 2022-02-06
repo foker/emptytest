@@ -1,6 +1,6 @@
 const { Minimatch } = require('minimatch');
 
-export const sets = (filters, files) => Array.from(Object.entries(filters)).reduce(
+module.exports.sets = (filters, files) => Array.from(Object.entries(filters)).reduce(
     (filtered, [key, patterns]) => patterns.split(/\r?\n/).reduce((filtered, pattern) => {
         const matcher = new Minimatch(pattern);
         const matched = files.filter((file) => matcher.match(file));
@@ -15,7 +15,7 @@ export const sets = (filters, files) => Array.from(Object.entries(filters)).redu
 const isDefined = (s) => {
     return s !== undefined;
 };
-export class GitHubDiff {
+module.exports.GitHubDiff = class {
     github;
 
     constructor(github) {

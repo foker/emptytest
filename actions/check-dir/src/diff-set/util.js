@@ -9,7 +9,8 @@ const cleanRef = (ref) => {
     }
     return ref;
 };
-export const intoParams = (config) => {
+
+module.exports.intoParams = (config) => {
     const [owner, repo] = config.githubRepository.split('/', 2);
     const head = cleanRef(config.githubRef);
     const base = config.base || 'master';
@@ -23,7 +24,7 @@ export const intoParams = (config) => {
     };
 };
 
-export const parseConfig = (env) => {
+module.exports.parseConfig = (env) => {
     return {
         githubToken: env.GITHUB_TOKEN || '',
         githubRef: env.GITHUB_HEAD_REF || env.GITHUB_REF || '',
