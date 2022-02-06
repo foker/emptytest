@@ -9,6 +9,7 @@ async function run() {
         const codeOwners = await getCodeOwners();
         const diffset = await getDiffSet();
         core.setOutput('codeOwners', JSON.stringify(codeOwners));
+
         core.setOutput('diffset', JSON.stringify(diffset));
         const payloadContext = github.context.payload;
 
