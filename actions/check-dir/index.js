@@ -16,6 +16,7 @@ async function run() {
         console.log('kek');
         const payloadContext = github.context.payload;
 
+
         failIfMissing(payloadContext, "Can't find payload context");
 
         failIfMissing(payloadContext.repository, "Can't find repository");
