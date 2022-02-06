@@ -4,7 +4,7 @@ const github = require("@actions/github");
 const getCodeOwners = require('./src/codeowners/main');
 const getDiffSet = require('./src/diff-set/main');
 
-async function run() {
+const run = async () => {
     try {
         const payloadContext = github.context.payload;
         const user = payloadContext.pull_request.user.login;
