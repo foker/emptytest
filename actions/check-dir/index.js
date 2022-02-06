@@ -18,6 +18,7 @@ async function run() {
         console.log('kek');
         const payloadContext = github.context.payload;
 
+
         console.log('context', payloadContext);
 
         failIfMissing(payloadContext, "Can't find payload context");
