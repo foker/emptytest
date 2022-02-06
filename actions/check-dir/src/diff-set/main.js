@@ -32,11 +32,7 @@ module.exports = async function() {
                 },
             }),
         );
-        const diffset = await differ.diff(intoParams(config));
-        setOutput('files', diffset.join(' '));
-        console.log('diffset1', config.fileFilters);
-        console.log('diffset2', diffset);
-        return sets(config.fileFilters, diffset);
+        return await differ.diff(intoParams(config));
     } catch (error) {
         console.log(error);
         setFailed(error.message);

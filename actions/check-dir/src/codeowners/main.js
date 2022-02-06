@@ -28,6 +28,8 @@ async function extractCodeOwnerInfo(codeownerPath, fileMatchInfo) {
             results = { codeownerInfo, fileMatches };
         }
 
+
+
         return results;
     } catch (error) {
         core.setFailed(error.message);

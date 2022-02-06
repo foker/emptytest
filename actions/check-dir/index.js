@@ -4,9 +4,11 @@ const github = require("@actions/github");
 const getCodeOwners = require('./src/codeowners/main');
 const getDiffSet = require('./src/diff-set/main');
 
+
+
 async function run() {
     try {
-        const codeOwners = await getCodeOwners();
+        const codeOwners = await getCodeOwners(undefined, true);
         const diffset = await getDiffSet();
         core.info('info')
         core.notice('notice')
