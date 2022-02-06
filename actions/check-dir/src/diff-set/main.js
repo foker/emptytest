@@ -34,6 +34,8 @@ module.exports = async function() {
         );
         const diffset = await differ.diff(intoParams(config));
         setOutput('files', diffset.join(' '));
+        console.log('diffset1', config.fileFilters);
+        console.log('diffset2', diffset);
         return sets(config.fileFilters, diffset);
     } catch (error) {
         console.log(error);
