@@ -7,7 +7,7 @@ const { env } = require('process');
 const { GitHubDiff, sets } = require('./diff');
 const { parseConfig, intoParams } = require('./util');
 
-export default async function() {
+module.exports = async function() {
     try {
         const config = parseConfig(env);
         Octokit.plugin(throttlingPlugin);

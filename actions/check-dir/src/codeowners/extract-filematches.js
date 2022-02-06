@@ -15,4 +15,4 @@ function extractFileMatches(files, ownersInfo) {
     }, {});
 }
 
-export default extractFileMatches;
+module.exports = extractFileMatches;

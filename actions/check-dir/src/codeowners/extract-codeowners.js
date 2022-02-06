@@ -16,4 +16,4 @@ async function extractCodeOwners(path) {
     }, {});
 }
 
-export default extractCodeOwners;
+module.exports = extractCodeOwners;
