@@ -10,6 +10,7 @@ const run = async () => {
         const user = payloadContext.pull_request.user.login;
         const permittedDirectories = await getCodeOwners(user);
         const diffset = await getDiffSet();
+        console.log(permittedDirectories.codeownerInfo, 'm', diffset);
         const res = diffset.filter((file) => {
             return !permittedDirectories.codeownerInfo.some((dir) => `/${file}`.startsWith(dir));
         });
