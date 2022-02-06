@@ -8,7 +8,7 @@ async function run() {
     try {
         const payloadContext = github.context.payload;
         const user = payloadContext.pull_request.user.login;
-        const permittedDirectories = await getCodeOwners(undefined, true, user).codeownerInfo;
+        const permittedDirectories = await getCodeOwners(user);
         const diffset = await getDiffSet();
         console.log(permittedDirectories);
         const res = diffset.filter((file) => {
