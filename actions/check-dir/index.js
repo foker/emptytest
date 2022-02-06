@@ -8,11 +8,15 @@ async function run() {
     try {
         const codeOwners = await getCodeOwners();
         const diffset = await getDiffSet();
+        core.info('info')
+        core.notice('notice')
+        core.warning('warning')
         core.setOutput('codeOwners', JSON.stringify(codeOwners));
         core.setOutput('diffset', JSON.stringify(diffset));
         const payloadContext = github.context.payload;
 
         failIfMissing(payloadContext, "Can't find payload context");
+
         failIfMissing(payloadContext.repository, "Can't find repository");
         failIfMissing(payloadContext.repository.owner, "Can't find owner");
         failIfMissing(payloadContext.repository.owner.login, "Can't find owner");
