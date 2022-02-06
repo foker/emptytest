@@ -40,5 +40,3 @@ module.exports = async function() {
         setFailed(error.message);
     }
 }
-
-run();
