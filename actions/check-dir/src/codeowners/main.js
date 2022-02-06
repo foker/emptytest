@@ -37,4 +37,4 @@ async function extractCodeOwnerInfo(codeownerPath, fileMatchInfo) {
 const codeownerPath = core.getInput('path') || './CODEOWNERS';
 const fileMatchInfo = core.getInput('file_match_info').toLowerCase() === 'true';
 
-export default () => extractCodeOwnerInfo(codeownerPath, fileMatchInfo);
+module.exports = () => extractCodeOwnerInfo(codeownerPath, fileMatchInfo);
