@@ -16,7 +16,7 @@ async function extractCodeOwners(path, byAuthor) {
     }, {});
 
     if (byAuthor) {
-        return Object.keys(res).filter((key) => res[key].includes(byAuthor));
+        return Object.keys(res).filter((key) => res[key].includes(`@${byAuthor}`));
     }
 
     return res;
