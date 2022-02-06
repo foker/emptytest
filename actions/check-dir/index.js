@@ -10,9 +10,8 @@ async function run() {
         const user = payloadContext.pull_request.user.login;
         const permittedDirectories = await getCodeOwners(user);
         const diffset = await getDiffSet();
-        console.log(permittedDirectories);
         const res = diffset.filter((file) => {
-            return !permittedDirectories.some((dir) => `/${file}`.startsWith(dir));
+            return !permittedDirectories.codeownerInfo.some((dir) => `/${file}`.startsWith(dir));
         });
 
         if (!res.length) {
