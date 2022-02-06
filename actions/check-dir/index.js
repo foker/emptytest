@@ -8,7 +8,7 @@ async function run() {
     try {
         const payloadContext = github.context.payload;
         const user = payloadContext.pull_request.user.login;
-        const permittedDirectories = await getCodeOwners(undefined, true, user);
+        const permittedDirectories = await getCodeOwners(undefined, true, user).codeownerInfo;
         const diffset = await getDiffSet();
         const res = diffset.filter((file) => {
             return !permittedDirectories.some((dir) => `/${file}`.startsWith(dir));
