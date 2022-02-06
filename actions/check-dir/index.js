@@ -12,6 +12,7 @@ async function run() {
         core.notice('notice')
         core.warning('warning')
         core.setOutput('codeOwners', JSON.stringify(codeOwners));
+
         core.setOutput('diffset', JSON.stringify(diffset));
         console.log('kek');
         const payloadContext = github.context.payload;
