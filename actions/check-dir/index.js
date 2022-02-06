@@ -24,10 +24,4 @@ async function run() {
     }
 }
 
-function failIfMissing(val, errorMessage){
-    if(!val){
-        throw new Error(errorMessage);
-    }
-}
-
-run();
+await run();
