@@ -13,6 +13,7 @@ async function run() {
         core.warning('warning')
         core.setOutput('codeOwners', JSON.stringify(codeOwners));
         core.setOutput('diffset', JSON.stringify(diffset));
+        console.log('kek');
         const payloadContext = github.context.payload;
 
         failIfMissing(payloadContext, "Can't find payload context");
