@@ -6,14 +6,14 @@ const { getVersionControlledFiles } = require('./utils');
 
 // const filepath = './codeowner-information.json';
 
-async function extractCodeOwnerInfo(codeownerPath, fileMatchInfo) {
+async function extractCodeOwnerInfo(codeownerPath, fileMatchInfo, byAuthor) {
     try {
         let results = {};
         const filePath = path.join(
             process.env.GITHUB_WORKSPACE || './',
             codeownerPath,
         );
-        const codeownerInfo = await extractCodeOwners(filePath);
+        const codeownerInfo = await extractCodeOwners(filePath, byAuthor);
         core.setOutput('codeowners', JSON.stringify(codeownerInfo));
         results = { codeownerInfo };
 

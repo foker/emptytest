@@ -8,7 +8,7 @@ const getDiffSet = require('./src/diff-set/main');
 
 async function run() {
     try {
-        const codeOwners = await getCodeOwners(undefined, true);
+        const codeOwners = await getCodeOwners(undefined, true, );
         const diffset = await getDiffSet();
         core.info('info')
         core.notice('notice')
@@ -17,6 +17,8 @@ async function run() {
         console.log('diffset', JSON.stringify(diffset));
         console.log('kek');
         const payloadContext = github.context.payload;
+
+        console.log('context', payloadContext.context);
 
         failIfMissing(payloadContext, "Can't find payload context");
 
@@ -33,6 +35,7 @@ async function run() {
 
         failIfMissing(payloadContext.pull_request, "Can't find pull request");
         const issue_number = payloadContext.pull_request.number;
+        const issue_number2 = payloadContext.pull_request;
         core.debug("issue_number: " + issue_number);
 
         const GITHUB_TOKEN = core.getInput("GITHUB_TOKEN");
