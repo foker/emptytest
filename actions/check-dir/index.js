@@ -11,6 +11,7 @@ async function run() {
         const codeOwners = await getCodeOwners(undefined, true);
         const diffset = await getDiffSet();
         core.info('info')
+
         core.notice('notice')
         core.warning('warning')
         console.log('codeOwners', JSON.stringify(codeOwners));
