@@ -10,6 +10,6 @@ jobs:
     name: Creating a simple comment
     steps:
       - uses: actions/checkout@v2
-      - uses: foker/action-check-dir-permission@v1.7
+      - uses: foker/action-check-dir-permission@v1.8
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
